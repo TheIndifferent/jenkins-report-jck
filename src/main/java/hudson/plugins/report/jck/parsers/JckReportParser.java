@@ -198,7 +198,12 @@ public class JckReportParser implements ReportParser {
                 break;
             }
             if (event == CDATA || event == CHARACTERS) {
-                return new TestOutput(resultTitle, in.getText());
+                StringBuilder outputString = new StringBuilder();
+                do {
+                    outputString.append(in.getText());
+                    event = in.next();
+                } while (event == CDATA || event == CHARACTERS);
+                return new TestOutput(resultTitle, outputString.toString().trim());
             }
         }
         return new TestOutput(resultTitle, "");
