@@ -59,7 +59,7 @@ public class JckReportParser implements ReportParser {
         throw new IllegalArgumentException("file name does not end with either .xml or .xml.gz extension: " + fullName);
     }
 
-    private ReportFull parseReport(InputStream reportStream) throws Exception {
+    ReportFull parseReport(InputStream reportStream) throws Exception {
         try (Reader reader = new InputStreamReader(reportStream, "UTF-8")) {
             ReportFull report = parseReport(reader);
             return report;
