@@ -139,7 +139,6 @@ public class BuildSummaryParser {
         List<String> listed = new ArrayList<>(limit);
         List<BuildReport> list = new ArrayList<>();
         Run[] builds = runs.toArray(new Run[0]);
-        outerloop:
         for (int i = 0; i < builds.length; i++) {
             Run run = builds[i];
             if (run.getResult() == null || run.getResult().isWorseThan(Result.UNSTABLE)) {
@@ -158,9 +157,6 @@ public class BuildSummaryParser {
                                 if (!listed.contains(builds[i + j].getDisplayName())) {
                                     listed.add(builds[i + j].getDisplayName());
                                 }
-                            }
-                            if (list.size() == limit) {
-                                break outerloop;
                             }
                         }
                     }
