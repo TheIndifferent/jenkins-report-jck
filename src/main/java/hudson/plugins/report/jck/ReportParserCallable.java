@@ -69,7 +69,7 @@ public class ReportParserCallable implements FilePath.FileCallable<List<Suite>> 
                     .filter(e -> e != null)
                     .sorted()
                     .collect(Collectors.toList());
-            if(result.size() == 0){
+            if (result != null && result.size() == 0) {
                 result.add(getFakeSuite());
             }
             return result;
