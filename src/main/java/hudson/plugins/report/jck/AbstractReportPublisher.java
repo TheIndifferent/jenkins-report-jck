@@ -84,7 +84,7 @@ abstract public class AbstractReportPublisher extends Recorder {
                 new ReportParserCallable(reportFileGlob, createReportParser()));
         if (report.stream().anyMatch(
                 s -> s.getReport() != null && (s.getReport().getTestsError() != 0 || s.getReport().getTestsFailed() != 0) || s.getReport().getTestsTotal() <= 0)) {
-            build.setResult(Result.UNSTABLE);
+            build.setResult(Result.FAILURE);
         }
         storeFailuresSummary(report, new File(build.getRootDir(), prefix() + "-" + REPORT_JSON));
         storeFullTestsList(report, new File(build.getRootDir(), prefix() + "-" + REPORT_TESTS_LIST_JSON));
