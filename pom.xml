@@ -152,7 +152,7 @@ FIXME -->
         <dependency>
             <groupId>com.fasterxml.woodstox</groupId>
             <artifactId>woodstox-core</artifactId>
-            <version>LATEST</version>
+            <version>5.4.0</version>
         </dependency>
         <dependency>
             <groupId>org.jenkins-ci.main</groupId>
