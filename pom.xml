@@ -22,9 +22,9 @@ FIXME -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <jenkins.version>2.319.2</jenkins.version>
+        <jenkins.version>2.379</jenkins.version>
         <java.level>8</java.level>
-        <slf.version>1.7.32</slf.version> <!-- We need to keep synced slf with jenkins, otherwise enforcer plugin fails. Not sure from where the older slfs may be arriving-->
+        <slf.version>1.7.36</slf.version> <!-- We need to keep synced slf with jenkins, otherwise enforcer plugin fails. Not sure from where the older slfs may be arriving-->
     </properties>
 
     <developers>
